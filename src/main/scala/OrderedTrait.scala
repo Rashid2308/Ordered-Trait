@@ -11,8 +11,8 @@ class EmptySet[A <: Ordered[A]] extends Set[A]{
 
 class NonEmptySet[A <: Ordered[A]](element: A, leftChild: Set[A], rightChild: Set[A]) extends Set[A]{
   override def contains(element: A): Boolean = {
-    if (this.element > element) rightChild contains element
-    else if (this.element < element) leftChild contains element
+    if (this.element > element) rightChild contains this.element
+    else if (this.element < element) leftChild contains this.element
     else true
   }
 
